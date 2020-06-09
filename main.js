@@ -9,16 +9,38 @@ const replaceAllButton = document.querySelector(".replace-all-button")
 // Later you will need an OUTER LOOP to loop over the individual elements within
 // this array.
 const rowElements = document.querySelectorAll(".row")
-
-// When you call the function belwo, it will get and return an INNER ARRAY
-// containing the cell elements for a given row.
-// Call this function from WITHIN your row elements loop. Then you will, in turn,
-// need to loop over the resulting cell elements. But where should this whole
-// NESTED LOOP go? Think through the user's experience: when should WHAT happen? 
-function getCellElements (currentRowElement) {
+function getCellElements(currentRowElement) {
     return currentRowElement.querySelectorAll(".cell")
 }
+replaceAllButton.addEventListener('click', function () {
+    console.log("replace-all-button");
 
+    let SearchInput = findInput.value;
+    let replacetext = replaceInput.value;
+
+    if (replaceAllButton.indexOf("SearchInput") > -1) {
+        replaceAllButton.replacetext(findInput, replaceInput);
+    }
+
+
+    for (let index = 0; index < rowElements.length; index++) {
+        console.log(index)
+        let currentRowElement = rowElements[index]
+        let cellElements = getCellElements(currentRowElement)
+        for (let counter = 0; counter < cellElements.length; counter++) {
+            let currentcellElement = cellElements[counter]
+            console.log(currentcellElement)
+        }
+
+        // hen you call the function below, it will get and return an INNER ARRAY
+        // containing the cell elements for a given row.
+        // Call this function from WITHIN your row elements loop. Then you will, in turn,
+        // need to loop over the resulting cell elements. But where should this whole
+        // NESTED LOOP go? Think through the user's experience: when should WHAT happen?
+
+    }
+
+})
 
 // YOUR CODE GOES HERE
 
@@ -36,3 +58,5 @@ function getCellElements (currentRowElement) {
 //
 // You can, of course, remove any comments in this starter project once
 // you have read them, if you prefer.
+
+
